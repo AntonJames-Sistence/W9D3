@@ -9,11 +9,11 @@ export default class FollowToggle {
   async handleClick(event) {
     event.preventDefault();
     if (this.followState === 'Follow!') {
-      this.unfollow();
-      console.log(this.followState)
+      this.render();
+      
     } else {
-      this.follow();
-      console.log(this.followState)
+      this.render();
+      
 
     };
     
@@ -21,17 +21,29 @@ export default class FollowToggle {
 
   async follow() {
     // Your code here
-  
+
+    
   }
 
   async unfollow() {
     // Your code here
-
+    this.toggleButton.innerText = 'Unfollow!'
   }
 
   render() {
     switch (this.followState) {
       // Your code here
+      case 'Follow!':
+        this.toggleButton.innerText = "Unfollow!";
+        // this.toggleButton.dataset.data-follow-state = "Unfollow!";
+        
+        console.log(this.followState)
+        break;
+      case "Unfollow!":
+        this.toggleButton.innerText = "Follow!"
+        this.toggleButton.dataset = "Follow!"
+        console.log(this.followState)
+        break;
     }
   }
 
