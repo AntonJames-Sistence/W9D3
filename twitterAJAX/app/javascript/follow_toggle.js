@@ -2,6 +2,7 @@ import { API, broadcast } from "./util";
 
 export default class FollowToggle {
   constructor(toggleButton) {
+    this.toggleButton = toggleButton
     // Your code here
   }
 
@@ -11,10 +12,12 @@ export default class FollowToggle {
 
   async follow() {
     // Your code here
+  
   }
 
   async unfollow() {
     // Your code here
+
   }
 
   render() {
